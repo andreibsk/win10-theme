@@ -1,0 +1,18 @@
+	//
+	// ACOL[@ACOLI] = [@ACOL]
+	{ "settings": ["theme_accent_color_@ACOLI"],                                   "class": "tab_control",          "attributes": ["selected"],                                                "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_toggle_color"],    "class": "icon_regex",           "parents": [{"class": "icon_button_control", "attributes": ["selected"]}], "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_toggle_color"],    "class": "icon_case",            "parents": [{"class": "icon_button_control", "attributes": ["selected"]}], "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_toggle_color"],    "class": "icon_whole_word",      "parents": [{"class": "icon_button_control", "attributes": ["selected"]}], "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_toggle_color"],    "class": "icon_context",         "parents": [{"class": "icon_button_control", "attributes": ["selected"]}], "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_toggle_color"],    "class": "icon_use_buffer",      "parents": [{"class": "icon_button_control", "attributes": ["selected"]}], "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_toggle_color"],    "class": "icon_wrap",            "parents": [{"class": "icon_button_control", "attributes": ["selected"]}], "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_toggle_color"],    "class": "icon_in_selection",    "parents": [{"class": "icon_button_control", "attributes": ["selected"]}], "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_toggle_color"],    "class": "icon_preserve_case",   "parents": [{"class": "icon_button_control", "attributes": ["selected"]}], "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_toggle_color"],    "class": "icon_highlight",       "parents": [{"class": "icon_button_control", "attributes": ["selected"]}], "layer0.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_selection_color"], "class": "tree_row",             "attributes": ["selected"],                                                "layer0.tint": [@ACOL, 102], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_selection_color"], "class": "tree_row",             "attributes": ["selected", "hover"],                                       "layer0.tint": [@ACOL, 153], "layer1.tint": [0, 0, 0, 0], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_selection_color"], "class": "text_line_control",    "parents": [{"class": "overlay_control" }],                                "layer1.tint": [@ACOL], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_selection_color"], "class": "quick_panel_row",      "attributes": ["selected"],                                                "layer0.tint": [@ACOL, 102], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_selection_color"], "class": "mini_quick_panel_row", "attributes": ["selected"],                                                "layer0.tint": [@ACOL, 102], },
+	{ "settings": ["theme_accent_color_@ACOLI", "!theme_default_selection_color"], "class": "table_row",            "attributes": ["selected"],                                                "layer0.tint": [@ACOL, 102], },

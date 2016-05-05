@@ -1,0 +1,1050 @@
+//
+// TABS (REGULAR)
+//
+	// Tab set
+	{
+		"class": "tabset_control",
+		"layer0.tint": [255, 255, 255],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [0, 0, 0, 1],
+		"layer1.draw_center": false,
+		"layer1.tint": [0, 0, 0], // [219, 219, 219],
+		"layer1.opacity": 0.141,
+
+		"tab_overlap": 1,
+		"tab_width": 180,
+		"tab_min_width": 40,
+		"tab_height": 28,
+		"mouse_wheel_switch": false,
+
+		"content_margin": [0, 0, 0, 1],
+	},
+	{
+		"class": "tabset_control",
+		"settings": ["theme_lightgray_sidebar"],
+		"layer0.tint": [242, 242, 242],
+	},
+	{
+		"class": "tabset_control",
+		"settings": ["mouse_wheel_switches_tabs"],
+		"mouse_wheel_switch": true,
+	},
+	// Tab
+	{
+		"class": "tab_control",
+		"content_margin": [12, 0, 8, 0],
+		"layer0.tint": [255, 255, 255],
+		"layer0.opacity": 1.0,
+		"layer1.tint": [0, 0, 0], //[252, 252, 252],
+		"layer1.opacity": { "target": 0.01, "speed": 0.2, "interpolation": "smoothstep" },
+		"layer2.inner_margin": [1, 1, 1, 0],
+		"layer2.draw_center": false,
+		"layer2.tint": [0, 0, 0], //[231, 231, 231],
+		"layer2.opacity": { "target": 0.08, "speed": 0.2, "interpolation": "smoothstep" },
+	},
+	{
+		"class": "tab_control",
+		"settings": ["theme_lightgray_sidebar"],
+		"layer0.tint": [242, 242, 242],
+		"layer0.opacity": 1.0,
+	},
+	// Tab hover
+	{
+		"class": "tab_control",
+		"attributes": ["hover"],
+		"layer1.opacity": { "target": 0.04, "speed": 0.3, "interpolation": "smoothstep" }, // [244, 244, 244],
+		"layer2.opacity": { "target": 0.14, "speed": 0.3, "interpolation": "smoothstep" }, // [209, 209, 209],
+	},
+	// Tab selected
+	{
+		"class": "tab_control",
+		"attributes": ["selected"],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+		"layer1.opacity": 0.0,
+		"layer2.opacity": 0.0,
+		"layer3.opacity": { "target": 0.0, "speed": 0.8, "interpolation": "smoothstep" },
+	},
+	// Tab selected hover
+	{
+		"class": "tab_control",
+		"attributes": ["selected", "hover"],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+		"layer0.opacity": 1.0,
+		"layer1.opacity": 0.0,
+		"layer2.opacity": 0.0,
+		"layer3.tint": [255, 255, 255],
+		"layer3.opacity": { "target": 0.15, "speed": 1, "interpolation": "smoothstep" },
+	},
+
+//
+// TAB BUTTONS
+//
+	// Tab close button
+	{
+		"class": "tab_close_button",
+		"content_margin": [8, 8],
+		"layer0.opacity": 0.0,
+		"layer1.texture": "Theme - Windows 10/textures/tab_close_button.png",
+		"layer1.tint": [153, 153, 153],
+		"layer1.opacity": 1.0,
+	},
+	{
+		"class": "tab_close_button",
+		"parents": [{"class": "tab_control", "attributes": ["selected"]}],
+		"layer1.tint": [255, 255, 255],
+	},
+	// Tab dirty button
+	{
+		"class": "tab_close_button",
+		"parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+		"layer1.texture": "Theme - Windows 10/textures/tab_close_button-dirty.png",
+	},
+	// Tab close button hover
+	{
+		"class": "tab_close_button",
+		"attributes": ["hover"],
+		"layer0.tint": [232, 17, 35],
+		"layer0.opacity": 1.0,
+		"layer1.texture": "Theme - Windows 10/textures/tab_close_button.png",
+		"layer1.tint": [255, 255, 255],
+	},
+	// Tab close button pressed
+	{
+		"class": "tab_close_button",
+		"attributes": ["pressed"],
+		"layer0.opacity": 0.75,
+		"layer1.tint": [255, 255, 255],
+	},
+
+//
+// TAB LABELS
+//
+	{
+		"class": "tab_label",
+		"fade": true,
+		"fg": [60, 60, 60],
+		"font.italic": false
+	},
+	{
+		"class": "tab_label",
+		"parents": [{"class": "tab_control", "attributes": ["hover"]}],
+		"fg": [60, 60, 60],
+	},
+	{
+		"class": "tab_label",
+		"parents": [{"class": "tab_control", "attributes": ["selected"]}],
+		"fg": [255, 255, 255],
+	},
+	{
+		"class": "tab_label",
+		"attributes": ["transient"],
+		"font.italic": true,
+	},
+
+//
+// TAB SCROLLING
+//
+	// Tab dropdown
+	{
+		"class": "show_tabs_dropdown_button",
+		"content_margin": [11, 11, 11, 11],
+		"layer0.opacity": 0.0,
+		"layer1.opacity": { "target": 0.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer2.inner_margin": [1, 1, 1, 1],
+		"layer2.draw_center": false,
+		"layer2.opacity": { "target": 0.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer3.texture": "Theme - Windows 10/textures/show_tabs_dropdown_button.png",
+		"layer3.tint": [153, 153, 153],
+		"layer3.opacity": 1.0,
+	},
+	{
+		"class": "show_tabs_dropdown_button",
+		"attributes": ["hover"],
+		"layer1.tint": [241, 247, 254],
+		"layer1.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer2.tint": [166, 209, 254],
+		"layer2.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+	},
+	{
+		"class": "show_tabs_dropdown_button",
+		"attributes": ["pressed"],
+		"layer1.tint": [209, 231, 254],
+		"layer2.tint": [102, 166, 231],
+	},
+
+	// Tab scroll left
+	{
+		"class": "scroll_tabs_left_button",
+		"content_margin": [8, 11, 8, 11],
+		"layer0.opacity": 0.0,
+		"layer1.opacity": { "target": 0.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer2.inner_margin": [1, 1, 1, 1],
+		"layer2.draw_center": false,
+		"layer2.opacity": { "target": 0.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer3.texture": "Theme - Windows 10/textures/scroll_tabs_left_button.png",
+		"layer3.tint": [153, 153, 153],
+		"layer3.opacity": 1.0,
+	},
+	{
+		"class": "scroll_tabs_left_button",
+		"attributes": ["hover"],
+		"layer1.tint": [241, 247, 254],
+		"layer1.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer2.tint": [166, 209, 254],
+		"layer2.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+	},
+	{
+		"class": "scroll_tabs_left_button",
+		"attributes": ["pressed"],
+		"layer1.tint": [209, 231, 254, 255],
+		"layer2.tint": [102, 166, 231, 255],
+	},
+
+	// Tab scroll right
+	{
+		"class": "scroll_tabs_right_button",
+		"content_margin": [8, 11, 8, 11],
+		"layer0.opacity": 0.0,
+		"layer1.opacity": { "target": 0.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer2.inner_margin": [1, 1, 1, 1],
+		"layer2.draw_center": false,
+		"layer2.opacity": { "target": 0.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer3.texture": "Theme - Windows 10/textures/scroll_tabs_right_button.png",
+		"layer3.tint": [153, 153, 153],
+		"layer3.opacity": 1.0,
+	},
+	{
+		"class": "scroll_tabs_right_button",
+		"attributes": ["hover"],
+		"layer1.tint": [241, 247, 254],
+		"layer1.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer2.tint": [166, 209, 254],
+		"layer2.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+	},
+	{
+		"class": "scroll_tabs_right_button",
+		"attributes": ["pressed"],
+		"layer1.tint": [209, 231, 254, 255],
+		"layer2.tint": [102, 166, 231, 255],
+	},
+
+//
+// FOLD BUTTONS
+//
+	{
+		"class": "fold_button_control",
+		"content_margin": [8, 8],
+		"layer0.texture": "Theme - Windows 10/textures/fold_button_control.png",
+		"layer0.tint": [0, 0, 0], // [64, 64, 64],
+		"layer0.opacity": 0.75,
+	},
+	{
+		"class": "fold_button_control",
+		"attributes": ["hover"],
+		"layer0.tint": [40, 199, 248],
+	},
+	{
+		"class": "fold_button_control",
+		"attributes": ["expanded"],
+		"layer0.texture": "Theme - Windows 10/textures/fold_button_control-expanded.png",
+		"layer0.tint": [0, 0, 0], // [166, 166, 166],
+		"layer0.opacity": 0.35,
+	},
+	{
+		"class": "fold_button_control",
+		"attributes": ["expanded", "hover"],
+		"layer0.tint": [40, 199, 248],
+	},
+
+//
+// STANDARD SCROLLBARS
+//
+	// vertical scroll bar
+	{
+		"class": "scroll_bar_control",
+		"layer0.opacity": 1.0,
+		"layer0.tint": [240, 240, 240],
+	},
+	// horizontal scroll bar
+	{
+		"class": "scroll_bar_control",
+		"attributes": ["horizontal"],
+		// "content_margin": [0, 0, 0, 0],
+	},
+	// scroll bar corner
+	{
+		"class": "scroll_corner_control",
+		"layer0.opacity": 1.0,
+		"layer0.tint": [240, 240, 240],
+	},
+	// vertical scroll puck
+	{
+		"class": "puck_control",
+		"layer0.opacity": 1.0,
+		"content_margin": [6, 12],
+		"layer0.tint": [205, 205, 205],
+	},
+	// horizontal scroll puck
+	{
+		"class": "puck_control",
+		"attributes": ["horizontal"],
+		"content_margin": [12, 6],
+	},
+
+//
+// EMPTY WINDOW BACKGROUND
+//
+	{
+		"class": "sheet_container_control",
+		"layer0.tint": [255, 255, 255],
+		"layer0.opacity": 1.0,
+	},
+
+//
+// GRID LAYOUT
+//
+	{
+		"class": "grid_layout_control",
+		"border_size": 1,
+		"border_color": [219, 219, 219], // fixed
+	},
+	{
+		"class": "grid_layout_control",
+		"settings": ["theme_lightgray_sidebar"],
+		"border_color": [207, 207, 207], // fixed
+	},
+
+//
+// MINI MAP
+//
+	{
+		"class": "minimap_control",
+		"settings": ["always_show_minimap_viewport"],
+		"viewport_color": [0, 0, 0, 35],
+		"viewport_opacity": 1.0,
+	},
+	{
+		"class": "minimap_control",
+		"settings": ["!always_show_minimap_viewport"],
+		"viewport_color": [0, 0, 0, 35],
+		"viewport_opacity": { "target": 0.0, "speed": 10.0, "interpolation": "smoothstep" },
+	},
+	{
+		"class": "minimap_control",
+		"attributes": ["hover"],
+		"settings": ["!always_show_minimap_viewport"],
+		"viewport_opacity": 1.0,
+	},
+
+//
+// DIALOG
+//
+	{
+		"class": "dialog",
+		"layer0.tint": [238, 238, 238],
+		"layer0.opacity": 1.0,
+	},
+
+//
+// PROGRESS BAR
+//
+	{
+		"class": "progress_bar_control",
+		"layer0.tint": [193, 193, 193],
+		"layer0.opacity": 1.0,
+	},
+	{
+		"class": "progress_gauge_control",
+		"layer0.tint": [70, 160, 225],
+		"layer0.opacity": 1.0,
+		"content_margin": [0, 6],
+	},
+
+//
+// LABELS
+//
+	// General labels
+	{
+		"class": "label_control",
+		"color": [0, 0, 0],
+	},
+	// Text field labels
+	{
+		"class": "label_control",
+		"parents": [{"class": "panel_control"}],
+		"shadow_color": [255, 255, 255],
+		"shadow_offset": [0, 0],
+	},
+	// Button labels
+	{
+		"class": "label_control",
+		"parents": [{"class": "button_control"}],
+		"shadow_color": [255, 255, 255],
+		"shadow_offset": [0, 0],
+	},
+
+//
+// TOOLTIP
+//
+	// Tooltip container
+	{
+		"class": "tool_tip_control",
+		"layer0.tint": [255, 255, 255],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [1, 1, 1, 1],
+		"layer1.draw_center": false,
+		"layer1.tint": [118, 118, 118],
+		"layer1.opacity": 1.0,
+		"content_margin": [6, 4],
+	},
+	// Tooltip content
+	{
+		"class": "tool_tip_label_control",
+		"color": [87, 87, 87],
+	},
+
+//
+// STATUS BAR
+//
+	// Status bar container
+	{
+		"class": "status_bar",
+		"layer0.tint": [242, 242, 242],
+		"layer0.opacity": 1.0,
+		"layer0.inner_margin": [2, 2],
+		"layer1.inner_margin": [0, 1, 0, 0],
+		"layer1.draw_center": false,
+		"layer1.tint": [0, 0, 0], // [219, 219, 219],
+		"layer1.opacity": 0.141,
+		"content_margin": [8, 4, 8, 4],
+	},
+	{
+		"class": "status_bar",
+		"settings": ["theme_lightgray_sidebar"],
+		"layer0.tint": [233, 233, 233]
+	},
+	// Status bar button
+	{
+		"class": "status_button",
+		"min_size": [100, 0],
+	},
+	// Status bar label
+	{
+		"class": "label_control",
+		"parents": [{"class": "status_bar"}],
+		"color": [80, 80, 80],
+	},
+	// Panel switcher
+	{
+		"class": "panel_button_control",
+		"layer0.tint": [0, 0, 0],
+	},
+
+//
+// SIDEBAR
+//
+	// Sidebar container
+	{
+		"class": "sidebar_container",
+		"content_margin": [0, 0, 1, 0],
+		"layer0.tint": [255, 255, 255],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [0, 0, 1, 0],
+		"layer1.draw_center": false,
+		"layer1.tint": [0, 0, 0], // [219, 219, 219],
+		"layer1.opacity": 0.141,
+	},
+	{
+		"class": "sidebar_container",
+		"settings": ["theme_lightgray_sidebar"],
+		"layer0.tint": [242, 242, 242],
+	},
+	// Sidebar tree
+	{
+		"class": "sidebar_tree",
+		"row_padding": [8, 4],
+		"indent": 10,
+		"indent_offset": 10,
+		"indent_top_level": false,
+	},
+	// Sidebar tree row
+	{
+		"class": "tree_row",
+		"layer0.tint": [0, 0, 0, 0],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [0, 1, 0, 1],
+		"layer1.draw_center": false,
+		"layer1.tint": [0, 0, 0, 0],
+		"layer1.opacity": 1.0,
+
+		"content_margin": [0, 20, 0, 0],
+	},
+	// Sidebar tree row selected
+	{
+		"class": "tree_row",
+		"attributes": ["selected"],
+		"layer0.tint": [0, 120, 215, 102], // acol
+	},
+	{
+		"class": "tree_row",
+		"attributes": ["hover"],
+		"layer0.tint": [128, 128, 128, 51], // fixed
+	},
+	{
+		"class": "tree_row",
+		"attributes": ["selected", "hover"],
+		"layer0.tint": [0, 120, 215, 153], // acol
+		"layer1.tint": [0, 0, 0, 0],
+	},
+	{
+		"class": "tree_row",
+		"settings": ["theme_default_selection_color"],
+		"attributes": ["selected"],
+		"layer0.tint": [156, 210, 255, 128],
+	},
+	{
+		"class": "tree_row",
+		"settings": ["theme_default_selection_color"],
+		"attributes": ["hover"],
+		"layer0.tint": [202, 230, 255, 128],
+	},
+	{
+		"class": "tree_row",
+		"settings": ["theme_default_selection_color"],
+		"attributes": ["selected", "hover"],
+		"layer0.tint": [205, 232, 255, 255],
+		"layer1.tint": [153, 209, 255, 255],
+	},
+	// Sidebar heading
+	{
+		"class": "sidebar_heading",
+		"color": [128, 128, 128],
+		"font.bold": true,
+	},
+	// Sidebar label
+	{
+		"class": "sidebar_label",
+		"color": [0, 0, 0],
+		"font.bold": false,
+		"font.italic": false,
+	},
+	{
+		"class": "sidebar_label",
+		"parents": [{"class": "tree_row", "attributes": ["expandable"]}],
+		"settings": ["bold_folder_labels"],
+		"color": [60, 60, 60],
+		"font.bold": true,
+	},
+	// Sidebar label transient
+	{
+		"class": "sidebar_label",
+		"attributes": ["transient"],
+		"font.italic": true,
+	},
+
+//
+// SIDEBAR - OPEN FILE ICONS
+//
+	// Sidebar file close
+	{
+		"class": "close_button",
+		"content_margin": [6, 6, 6, 6],
+		"layer0.tint": [232, 17, 35],
+		"layer0.opacity": 0.0,
+		"layer1.texture": "Theme - Windows 10/textures/close_button.png",
+		"layer1.tint": [0, 0, 0, 0],
+		"layer1.opacity": 1.0,
+	},
+	{
+		"class": "close_button",
+		"parents": [{"class": "tree_row", "attributes": ["hover"]}],
+		"layer1.tint": [0, 0, 0, 102],
+	},
+	// Sidebar file dirty
+	{
+		"class": "close_button",
+		"attributes": ["dirty"],
+		"layer1.texture": "Theme - Windows 10/textures/close_button-dirty.png",
+		"layer1.tint": [0, 0, 0, 102],
+	},
+	// Sidebar file close hover
+	{
+		"class": "close_button",
+		"attributes": ["hover"],
+		"layer0.opacity": 1.0,
+		"layer1.texture": "Theme - Windows 10/textures/close_button.png",
+		"layer1.tint": [255, 255, 255, 255],
+	},
+	{
+		"class": "close_button",
+		"attributes": ["pressed"],
+		"layer0.opacity": 0.75,
+		"layer1.texture": "Theme - Windows 10/textures/close_button.png",
+		"layer1.tint": [255, 255, 255, 255],
+	},
+
+//
+// SIDEBAR - GENERAL FILE ICONS
+//
+	// Sidebar group closed
+	{
+		"class": "disclosure_button_control",
+		"content_margin": [8, 8],
+		"layer0.texture": "Theme - Windows 10/textures/disclosure_button_control.png",
+		"layer0.tint": [166, 166, 166],
+		"layer0.opacity": 1.0,
+	},
+	{
+		"class": "disclosure_button_control",
+		"attributes": ["hover"],
+		"layer0.tint": [78, 208, 249],
+	},
+	// Sidebar group open
+	{
+		"class": "disclosure_button_control",
+		"attributes": ["expanded"],
+		"layer0.texture": "Theme - Windows 10/textures/disclosure_button_control-expanded.png",
+		"layer0.tint": [64, 64, 64],
+	},
+	{
+		"class": "disclosure_button_control",
+		"attributes": ["expanded", "hover"],
+		"layer0.tint": [78, 208, 249],
+	},
+	// Sidebar folder
+	{
+		"class": "icon_folder",
+		"layer0.texture": "Theme - Windows 10/icons/folder.png",
+		"content_margin": [8, 8],
+	},
+	// Sidebar folder closed
+	{
+		"class": "icon_folder",
+		"settings": ["theme_blue_folders"],
+		"layer0.texture": "Theme - Windows 10/icons/folder_blue.png",
+	},
+	// Sidebar folder loading
+	{
+		"class": "icon_folder_loading",
+		"layer0.texture":
+		{
+			"keyframes":
+			[
+				"Theme - Windows 10/icons/folder_loading/7.png",
+				"Theme - Windows 10/icons/folder_loading/6.png",
+				"Theme - Windows 10/icons/folder_loading/5.png",
+				"Theme - Windows 10/icons/folder_loading/4.png",
+				"Theme - Windows 10/icons/folder_loading/3.png",
+				"Theme - Windows 10/icons/folder_loading/2.png",
+				"Theme - Windows 10/icons/folder_loading/1.png",
+				"Theme - Windows 10/icons/folder_loading/0.png"
+			],
+			"loop": true,
+			"frame_time": 0.075,
+		},
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8],
+	},
+	//Sidebar file icons
+	{
+		"class": "icon_file_type",
+		// layer0.texture is filled in by code with the relevant icon name
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8],
+	},
+
+//
+// STANDARD TEXT BUTTONS
+//
+	// Default button state
+	{
+		"class": "button_control",
+		"content_margin": [5, 4, 5, 5],
+		"min_size": [75, 0],
+		"layer0.tint": [225, 225, 225],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [1, 1, 1, 1],
+		"layer1.draw_center": false,
+		"layer1.tint": [173, 173, 173],
+		"layer1.opacity": 1.0,
+		// "layer2.tint": [225, 225, 225],
+		"layer2.opacity": { "target": 0.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer3.inner_margin": [1, 1, 1, 1],
+		"layer3.draw_center": false,
+		// "layer3.tint": [173, 173, 173],
+		"layer3.opacity": { "target": 0.0, "speed": 5, "interpolation": "smoothstep" },
+	},
+	{
+		"class": "button_control",
+		"attributes": ["hover"],
+		"layer2.tint": [229, 241, 251],
+		"layer2.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer3.tint": [0, 120, 215],
+		"layer3.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+	},
+	// Pressed button state
+	{
+		"class": "button_control",
+		"attributes": ["pressed"],
+		"layer2.tint": [204, 228, 247],
+		"layer2.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+		"layer3.tint": [0, 48, 153],
+		"layer3.opacity": { "target": 1.0, "speed": 5, "interpolation": "smoothstep" },
+	},
+
+//
+// TEXT INPUT FIELD
+//
+	// Text input field item
+	{
+		"class": "text_line_control",
+		"layer0.tint": [255, 255, 255],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [1, 1, 1, 1],
+		"layer1.draw_center": false,
+		"layer1.tint": [122, 122, 122],
+		"layer1.opacity": 1.0,
+		"content_margin": [1, 1, 1, 1],
+	},
+	{
+		"class": "text_line_control",
+		"attributes": ["hover"],
+		"layer1.tint": [0, 120, 215],
+	},
+	// Text input dropdown
+	{
+		"class": "dropdown_button_control",
+		"content_margin": [8, 8, 8, 8],
+		"layer0.texture": "Theme - Windows 10/textures/dropdown_button_control.png",
+		"layer0.tint": [92, 92, 92],
+		"layer0.opacity": 1.0,
+	},
+	{
+		"class": "dropdown_button_control",
+		"attributes": ["hover"],
+		"layer0.tint": [50, 152, 254],
+	},
+
+//
+// PANEL BACKGROUNDS
+//
+	// Bottom panel background
+	{
+		"class": "panel_control",
+		"layer0.tint": [242, 242, 242],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [0, 1, 0, 0],
+		"layer1.draw_center": false,
+		"layer1.tint": [0, 0, 0], // [219, 219, 219],
+		"layer1.opacity": 0.141,
+		"content_margin": [2, 2, 2, 1],
+	},
+	// Quick panel background
+	{
+		"class": "overlay_control",
+		"layer0.tint": [242, 242, 242],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [1, 1, 1, 1],
+		"layer1.draw_center": false,
+		"layer1.tint": [204, 204, 204],
+		"layer1.opacity": 1.0,
+		"content_margin": [8, 10, 8, 10],
+	},
+
+//
+// QUICK PANEL
+//
+	{
+		"class": "quick_panel",
+		"row_padding": [8, 4],
+		"layer0.tint": [242, 242, 242],
+		"layer0.opacity": 1.0,
+	},
+	{
+		"class": "text_line_control",
+		"parents": [{"class": "overlay_control" }],
+		"layer0.tint": [255, 255, 255],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [1, 1, 1, 1],
+		"layer1.draw_center": false,
+		"layer1.tint": [0, 120, 215], // fixed
+		"layer1.opacity": 1.0,
+		"content_margin": [3, 3, 3, 3],
+	},
+	{
+		"class": "quick_panel_row",
+		"layer0.tint": [0, 0, 0, 0],
+		"layer0.opacity": 1.0,
+		"content_margin": [5, 5, 5, 5],
+	},
+	{
+		"class": "quick_panel_row",
+		"attributes": ["selected"],
+		"layer0.tint": [0, 120, 215, 102], // acol
+	},
+	{
+		"class": "quick_panel_row",
+		"settings": ["theme_default_selection_color"],
+		"attributes": ["selected"],
+		"layer0.tint": [145, 201, 247, 255], // fixed
+	},
+	{
+		"class": "quick_panel_label",
+		"fg": [40, 40, 40 ],
+		"match_fg": [0, 0, 0 ],
+		"selected_fg": [40, 40, 40 ],
+		"selected_match_fg": [0, 0, 0],
+	},
+	{
+		"class": "quick_panel_path_label",
+		"fg": [120, 120, 120, 255],
+		"match_fg": [0, 0, 0, 255],
+		"selected_fg": [40, 40, 40 ],
+		"selected_match_fg": [0, 0, 0],
+	},
+	{
+		"class": "quick_panel_score_label",
+		"fg": [160, 160, 160, 255],
+		"selected_fg": [120, 120, 120, 255],
+	},
+//
+// MINI QUICK PANEL
+//
+	{
+		"class": "mini_quick_panel_row",
+		"layer0.tint": [0, 0, 0, 0],
+		"layer0.opacity": 1.0,
+	},
+	{
+		"class": "mini_quick_panel_row",
+		"attributes": ["selected"],
+		"layer0.tint": [0, 120, 215, 102], // acol
+	},
+	{
+		"class": "mini_quick_panel_row",
+		"settings": ["theme_default_selection_color"],
+		"attributes": ["selected"],
+		"layer0.tint": [145, 201, 247, 255], // fixed
+	},
+
+//
+// CODE COMPLETION DROPDOWN
+//
+	{
+		"class": "popup_control",
+		"layer0.tint": [242, 242, 242],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [1, 1, 1, 1],
+		"layer1.draw_center": false,
+		"layer1.tint": [204, 204, 204],
+		"layer1.opacity": 1.0,
+		"content_margin": [3, 3, 3, 3],
+	},
+	{
+		"class": "auto_complete",
+		"row_padding": [3, 1],
+	},
+	{
+		"class": "auto_complete_label",
+		"fg": [70, 70, 70],
+		"match_fg": [40, 40, 40],
+		"selected_fg": [60, 60, 60],
+		"selected_match_fg": [0, 0, 0],
+	},
+	{
+		"class": "table_row",
+		"layer0.tint": [0, 0, 0, 0],
+		"layer0.opacity": 1.0,
+	},
+	{
+		"class": "table_row",
+		"attributes": ["selected"],
+		"layer0.tint": [0, 120, 215, 102], // acol
+	},
+	{
+		"class": "table_row",
+		"settings": ["theme_default_selection_color"],
+		"attributes": ["selected"],
+		"layer0.tint": [145, 201, 247, 255], // fixed
+	},
+
+//
+// BOTTOM PANEL BUTTONS
+//
+	// Button group middle
+	{
+		"class": "icon_button_control",
+		"layer0.tint": [242, 242, 242],
+		"layer0.opacity": 1.0,
+		"layer1.inner_margin": [1, 1, 1, 1],
+		"layer1.draw_center": false,
+		"layer1.tint": [173, 173, 173],
+		"layer1.opacity": 1.0,
+		"content_margin": [3, 3, 3, 3],
+	},
+	{
+		"class": "icon_button_control",
+		"attributes": ["hover"],
+		"layer0.tint": [229, 241, 251],
+		"layer1.tint": [0, 120, 215],
+	},
+	{
+		"class": "icon_button_control",
+		"attributes": ["pressed"],
+		"layer0.tint": [204, 228, 246],
+		"layer1.tint": [0, 84, 153],
+	},
+
+	// Panel close button
+	{
+		"class": "panel_close_button",
+		"layer0.texture": "Theme - Windows 10/textures/panel_close_button.png",
+		"layer0.tint": [153, 153, 153],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 11, 8, 11]
+	},
+	{
+		"class": "panel_close_button",
+		"attributes": ["hover"],
+		"layer0.texture": "Theme - Windows 10/textures/panel_close_button-hover.png",
+		"layer0.tint": [255, 255, 255],
+		"layer0.opacity": 1.0,
+	},
+	{
+		"class": "panel_close_button",
+		"attributes": ["pressed"],
+		"layer0.opacity": 0.75,
+	},
+
+//
+// BOTTOM PANEL ICONS - GROUP 1
+//
+	// Regex search button
+	{
+		"class": "icon_regex",
+		"layer0.texture": "Theme - Windows 10/icons/ui/regex.png",
+		"layer0.tint": [60, 60, 60],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8, 8, 8],
+	},
+	{
+		"class": "icon_regex",
+		"parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+	},
+	// Case sensitive search button
+	{
+		"class": "icon_case",
+		"layer0.texture": "Theme - Windows 10/icons/ui/case.png",
+		"layer0.tint": [60, 60, 60],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8, 8, 8],
+	},
+	{
+		"class": "icon_case",
+		"parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+	},
+	// Match whole word search button
+	{
+		"class": "icon_whole_word",
+		"layer0.texture": "Theme - Windows 10/icons/ui/whole_word.png",
+		"layer0.tint": [60, 60, 60],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8, 8, 8],
+	},
+	{
+		"class": "icon_whole_word",
+		"parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+	},
+
+//
+// BOTTOM PANEL ICONS - GROUP 1 (EXTENDED: FIND IN FILES)
+//
+	// Show search context button
+	{
+		"class": "icon_context",
+		"layer0.texture": "Theme - Windows 10/icons/ui/context.png",
+		"layer0.tint": [60, 60, 60],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8, 8, 8],
+	},
+	{
+		"class": "icon_context",
+		"parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+	},
+	// Use search buffer
+	{
+		"class": "icon_use_buffer",
+		"layer0.texture": "Theme - Windows 10/icons/ui/use_buffer.png",
+		"layer0.tint": [60, 60, 60],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8, 8, 8],
+	},
+	{
+		"class": "icon_use_buffer",
+		"parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+	},
+	// Search wrap button
+	{
+		"class": "icon_wrap",
+		"layer0.texture": "Theme - Windows 10/icons/ui/wrap.png",
+		"layer0.tint": [60, 60, 60],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8, 8, 8],
+	},
+	{
+		"class": "icon_wrap",
+		"parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+	},
+	// Search in selection button
+	{
+		"class": "icon_in_selection",
+		"layer0.texture": "Theme - Windows 10/icons/ui/in_selection.png",
+		"layer0.tint": [60, 60, 60],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8, 8, 8],
+	},
+	{
+		"class": "icon_in_selection",
+		"parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+	},
+
+//
+// BOTTOM PANEL ICONS - GROUP 3
+//
+	// Preserve case button
+	{
+		"class": "icon_preserve_case",
+		"layer0.texture": "Theme - Windows 10/icons/ui/preserve_case.png",
+		"layer0.tint": [60, 60, 60],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8, 8, 8],
+	},
+	{
+		"class": "icon_preserve_case",
+		"parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+	},
+
+//
+// BOTTOM PANEL ICONS - GROUP 4
+//
+	// Highlight results button
+	{
+		"class": "icon_highlight",
+		"layer0.texture": "Theme - Windows 10/icons/ui/highlight.png",
+		"layer0.tint": [60, 60, 60],
+		"layer0.opacity": 1.0,
+		"content_margin": [8, 8, 8, 8],
+	},
+	{
+		"class": "icon_highlight",
+		"parents": [{"class": "icon_button_control", "attributes": ["selected"]}],
+		"layer0.tint": [@ACOL_DEFAULT], // @ACOL
+	},
