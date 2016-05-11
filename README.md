@@ -7,9 +7,14 @@ Windows 10 inspired light theme for Sublime Text 3.
 
 ## Instalation
 
+### Easy installation using [Package Control](https://packagecontrol.io/):
+
+* Select `Package Control: Install Package` from Sublime Text's quick panel (`Ctrl+Shift+P`)
+* Search the theme by its name and press enter to install
+
 ### Manual installation
 
-* Download the files using GitHub's `Donwload ZIP` function
+* Download the zipped files from the [release page](https://github.com/andreibsk/win10-theme/releases/latest) or using GitHub's `Donwload ZIP` function
 * Unzip the files and rename the folder to `Theme - Windows 10`
 * Find your `Packages` directory using the menu item  `Preferences` > `Browse Packages...`
 * Copy the folder into your Sublime Text `Packages` directory
@@ -19,8 +24,10 @@ Windows 10 inspired light theme for Sublime Text 3.
 
 Activate the theme by setting the following entries in your settings file (`Preferences` > `Settings User`):
 ```json
+{
 	"theme"       : "Windows 10.sublime-theme",
 	"color_scheme": "Packages/Theme - Windows 10/Widget - Windows 10.tmTheme",
+}
 ```
 
 
